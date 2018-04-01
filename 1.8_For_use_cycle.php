@@ -28,13 +28,17 @@ header('Content-Type: text/html; charset=utf-8');
 $cols = rand(1, 10);
 $rows = rand(1, 10);
 //ЗАДАНИЕ 2, 3
-echo "<table border = 1>";
+echo "<table border=1 style=\"border-collapse: collapse\">";
 for ($j = 1; $j <= $rows; $j++){
   echo "<tr>";
   for ($i = 1; $i <= $cols; $i++) {
-    if (!($j == 1 or $i == 1)) echo "<td>" . ($i * $j) . "</td>";
-    else echo "<th bgcolor = blue width = 50>
-      <font color = yellow>" . ($i * $j) . "</font></th>";
+    if (!($j == 1 or $i == 1)) {
+      echo "<td>", $i*$j, "</td>";
+    }
+    else {
+      echo "<th bgcolor = blue width = 50>
+      <font color = yellow>", $i*$j, "</font></th>";
+    }
   }
   echo "</tr>";
 }
